@@ -105,15 +105,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-auto p-2 w-full">
-        <div className="flex h-8 justify-center">
-          <a href={'https://github.com/nilsfs7/eth-duties-dashboard'} target="_blank" rel="noopener noreferrer">
-            <div className="flex h-full w-full items-center gap-1 text-sm">
-              <Image src={'github_icon.svg'} width={0} height={0} sizes="100vw" className={`h-full w-full`} alt={''} />
-              <div>{`nilsfs7`}</div>
-            </div>
-          </a>
-        </div>
+      <div className="mt-auto p-2">
+        <a href={'https://github.com/nilsfs7/eth-duties-dashboard'} target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col h-full w-full items-center gap-1 text-sm">
+            <Image src={'github_icon.svg'} width={0} height={0} sizes="100vw" className={`h-8 w-full`} alt={''} />
+            <div>{`nilsfs7`}</div>
+          </div>
+        </a>
       </div>
     </main>
   );
