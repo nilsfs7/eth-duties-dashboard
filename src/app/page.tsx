@@ -50,18 +50,20 @@ export default function Home() {
       <div className="rounded-lg h-full flex w-full justify-center overflow-y-hidden max-h-full px-2 pt-2">
         <div className="flex flex-col">
           <div className="grid grid-cols-4 rounded-t-lg bg-[#36304a] text-white p-2 gap-2">
-            <div>Validator</div>
-            <div>Duty</div>
-            <div>Slot</div>
-            <div>Time left</div>
+            <div>{`Validator`}</div>
+            <div>{`Duty`}</div>
+            <div>{`Slot`}</div>
+            <div>{`Time left`}</div>
           </div>
 
           <div className="no-scrollbar overflow-y-auto rounded-b-lg">
             {blocks.map((duty, index) => {
+              const beaconchainUrl = `https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`;
+
               return (
                 <div key={`row-blocks-${index}`} className={`grid grid-cols-4 p-2 gap-2 bg-white ${index === attestations.length - 1 && 'rounded-b-lg'} `}>
                   <div>
-                    <a href={`https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`${beaconchainUrl}#blocks`} target="_blank" rel="noopener noreferrer">
                       {duty.validator_index}
                     </a>
                   </div>
@@ -73,10 +75,12 @@ export default function Home() {
             })}
 
             {syncs.map((duty, index) => {
+              const beaconchainUrl = `https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`;
+
               return (
                 <div key={`row-syncs-${index}`} className={`grid grid-cols-4 p-2 gap-2 bg-white ${index === attestations.length - 1 && 'rounded-b-lg'} `}>
                   <div>
-                    <a href={`https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`${beaconchainUrl}#sync`} target="_blank" rel="noopener noreferrer">
                       {duty.validator_index}
                     </a>
                   </div>
@@ -88,10 +92,12 @@ export default function Home() {
             })}
 
             {attestations.map((duty, index) => {
+              const beaconchainUrl = `https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`;
+
               return (
                 <div key={`row-attestations-${index}`} className={`grid grid-cols-4 p-2 gap-2 bg-white ${index === attestations.length - 1 && 'rounded-b-lg'} `}>
                   <div>
-                    <a href={`https://${process.env.NEXT_PUBLIC_NETWORK}.beaconcha.in/validator/${duty.validator_index}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`${beaconchainUrl}#attestations`} target="_blank" rel="noopener noreferrer">
                       {duty.validator_index}
                     </a>
                   </div>
