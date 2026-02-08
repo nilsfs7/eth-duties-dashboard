@@ -30,7 +30,7 @@ The dashboard is available at [localhost:5001](http://localhost:5001/).
 
 ### Prerequisites
 
-[node.js](https://nodejs.org/en) >= 22.15.1
+[node.js](https://nodejs.org/en) >= 24.13.0
 
 [yarn](https://yarnpkg.com/)
 

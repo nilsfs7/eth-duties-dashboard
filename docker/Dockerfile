@@ -1,5 +1,5 @@
 # Build stage
-FROM node:22.15.1 AS build
+FROM node:24.13.0 AS build
 
 ## Declare build arguments
 ARG ETH_DUTIES=http://localhost:5000
@@ -25,7 +25,7 @@ RUN yarn build
 
 
 # Run stage
-FROM node:22.15.1
+FROM node:24.13.0
 
 ## Switch to less privileged user
 USER node
