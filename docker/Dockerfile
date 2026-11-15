@@ -1,5 +1,5 @@
 # Build stage
-FROM node:24.13.0 AS build
+FROM node:26.13.1-trixie-slim AS build
 
 ## Declare build arguments
 ARG ETH_DUTIES=http://localhost:5000
@@ -16,16 +16,16 @@ WORKDIR /app
 COPY . .
 
 ## Install app dependencies
-COPY tsconfig*.json package*.json yarn.lock /
-RUN yarn
+RUN npm ci --legacy-peer-deps
 
 ## Build app
-RUN yarn build
+RUN npm run build
 
 
 
 # Run stage
-FROM node:24.13.0
+FROM node:26.13.1-trixie-slim
+
 
 ## Switch to less privileged user
 USER node
@@ -44,4 +44,4 @@ COPY --from=build /app/next.config.mjs ./next.config.mjs
 EXPOSE 5001
 
 ## Execute app
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

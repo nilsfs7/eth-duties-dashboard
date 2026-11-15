@@ -30,9 +30,7 @@ The dashboard is available at [localhost:5001](http://localhost:5001/).
 
 ### Prerequisites
 
-[node.js](https://nodejs.org/en) >= 24.13.0
-
-[yarn](https://yarnpkg.com/)
+[node.js](https://nodejs.org/en) >= 26.13.1
 
 [Docker](https://docs.docker.com/manuals/) Engine, Build & Compose
 
@@ -47,13 +45,13 @@ cp .env.example .env
 Install dependencies
 
 ```bash
-yarn install
+npm install
 ```
 
 Start app
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ### Run in Docker
